@@ -1,4 +1,4 @@
-{ "commands": [
+  { "commands": [
 { "hdr": "750", "eax": "2A", "fcm1": true, "cmd": {"21": "16"}, "freq": 1, "dbgfilter": { "to": 2019, "years": [2022], "from": 2024 },
   "signals": [
     {"id": "4RUNNER_TT_FL",    "path": "Tires", "fmt": {           "len": 8, "max": 150, "min": -20, "add": -40, "unit": "celsius" }, "name": "Front left tire temperature"},
@@ -51,7 +51,9 @@
         "144": { "description": "", "value": "Off" },
         "176": { "description": "", "value": "On" },
         "208": { "description": "", "value": "Off" },
-        "240": { "description": "", "value": "On" }
+        "240": { "description": "", "value": "On" },
+        "537": { "description": "it's either this or 219", "value": "Off" },
+        "539": { "description": "it's either this or 21B", "value": "On" }
       }}
     }
   ]},
