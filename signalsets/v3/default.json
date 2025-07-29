@@ -92,16 +92,19 @@
     {
       "id": "4RUNNER_GEAR_POSITION",
       "name": "Gear position",
+      "path": "Transmission",
       "fmt": { "bix": 40, "len": 8, "map": { "128": "Park", "32": "Neutral", "16": "Drive" } }
     },
     {
       "id": "4RUNNER_MANUAL_FLAG",
       "name": "Manual flag",
-      "fmt": { "bix": 48, "len": 8, "map": { "0": "Auto", "128": "Manual" } }
+      "path": "Transmission",
+      "fmt": { "bix": 48, "len": 8, "map": { "0": "Auto", "128": "Sequential mode" } }
     },
     {
       "id": "4RUNNER_4WD_MODE",
       "name": "4WD mode",
+      "path": "Transmission",
       "fmt": { "bix": 56, "len": 8, "map": { "0": "2WD", "2": "4WD", "10": "4Lo" } }
     }
   ]
