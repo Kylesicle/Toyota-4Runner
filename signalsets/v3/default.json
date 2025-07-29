@@ -54,7 +54,6 @@
         "240": { "description": "", "value": "On" },
         "537": { "description": "it's either this or 219", "value": "Off" },
         "539": { "description": "it's either this or 21B", "value": "On" }
-
       }}
     }
   ]},
