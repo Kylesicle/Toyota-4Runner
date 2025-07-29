@@ -84,14 +84,13 @@
   ]},
 {
       "hdr": "7E0",
-      "rax": "7E8",
       "cmd": {"21": "25"},
       "freq": 1,
       "dbgfilter": { "years": [2018, 2019, 2020, 2022, 2023, 2024, 2025], "from": 2026 },
       "signals": [
         {
           "id": "4RUNNER_GEAR_POSITION",
-          "path": "Drivetrain",
+          "path": "Transmission",
           "fmt": { "bix": 0, "len": 8, "map": { "10": "Park", "20": "Neutral", "16": "Drive" } },
           "name": "Gear position"
         },
