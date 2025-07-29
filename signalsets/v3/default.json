@@ -84,26 +84,27 @@
   ]},
 {
   "hdr": "7E0",
+  "rax": "7E8",
   "cmd": {"21": "25"},
   "freq": 1,
   "signals": [
     {
       "id": "4RUNNER_GEAR_POSITION",
-      "fmt": { "bix": 40, "len": 8, "map": { "128": "Park", "32": "Neutral", "16": "Drive" } },
+      "fmt": { "bix": 0, "len": 8, "map": { "128": "Park", "32": "Neutral", "16": "Drive" } },
       "name": "Gear position",
-      "description": "Maps 8-bit values to gear positions (Park, Neutral, Drive)"
+      "description": "Maps 8-bit values from bits 0-7 (byte 0) to gear positions, e.g., 96 may indicate Park"
     },
     {
       "id": "4RUNNER_MANUAL_FLAG",
-      "fmt": { "bix": 48, "len": 8, "map": { "0": "Auto", "128": "Manual" } },
+      "fmt": { "bix": 8, "len": 8, "map": { "0": "Auto", "18": "Manual" } },
       "name": "Manual mode",
-      "description": "Indicates whether manual drive mode is active (0 = Auto, 128 = Manual)"
+      "description": "Maps 8-bit values from bits 8-15 (byte 1), 18 indicates Manual Drive"
     },
     {
       "id": "4RUNNER_4WD_MODE",
-      "fmt": { "bix": 56, "len": 8, "map": { "0": "2WD", "2": "4WD", "10": "4Lo" } },
+      "fmt": { "bix": 16, "len": 8, "map": { "0": "2WD", "2": "4WD", "72": "4WD", "8": "4WD", "200": "4Lo", "136": "4Lo" } },
       "name": "4WD mode",
-      "description": "Maps 8-bit decimal values to transfer case modes (2WD, 4WD, 4Lo)"
+      "description": "Maps 8-bit values from bits 16-23 (byte 2) to transfer case modes, multiple values for 4WD/4Lo"
     }
   ]
 }
