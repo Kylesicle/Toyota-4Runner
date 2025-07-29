@@ -87,41 +87,24 @@
   "rax": "7E8",
   "cmd": {"21": "25"},
   "freq": 1,
-  "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
   "signals": [
     {
-      "id": "4RUNNER_TRANSFER_CASE",
-      "path": "Transmission",
-      "fmt": {
-        "bix": 16,
-        "len": 16,
-        "map": {
-          "4": { "description": "Two-wheel drive mode", "value": "2WD" },
-          "520": { "description": "Four-wheel drive mode in Drive", "value": "4WD" },
-          "584": { "description": "Four-wheel drive mode", "value": "4WD" },
-          "648": { "description": "Four-wheel drive low mode in Drive", "value": "4Lo" },
-          "712": { "description": "Four-wheel drive low mode", "value": "4Lo" }
-        }
-      },
-      "name": "Transfer case mode",
-      "description": "Indicates the current mode of the transfer case (2WD, 4WD, or 4Lo)."
+      "id": "4RUNNER_GEAR_POSITION",
+      "fmt": { "bix": 40, "len": 8, "map": { "128": "Park", "32": "Neutral", "16": "Drive" } },
+      "name": "Gear positions?"
     },
     {
-      "id": "4RUNNER_GEAR_STATE",
-      "path": "Transmission",
-      "fmt": {
-        "bix": 56,
-        "len": 8,
-        "map": {
-          "80": { "description": "Vehicle in Park", "value": "Park" },
-          "20": { "description": "Vehicle in Neutral", "value": "Neutral" },
-          "10": { "description": "Vehicle in Drive or Manual Drive", "value": "Drive" }
-        }
-      },
-      "name": "Gear state",
-      "description": "Indicates the current gear state (Park, Neutral, Drive, or Manual Drive)."
+      "id": "4RUNNER_MANUAL_FLAG",
+      "fmt": { "bix": 48, "len": 8, "map": { "0": "Auto", "128": "Manual" } },
+      "name": "Manual mode?"
+    },
+    {
+      "id": "4RUNNER_4WD_MODE",
+      "fmt": { "bix": 56, "len": 8, "map": { "0": "2WD", "2": "4WD", "10": "4Lo" } },
+      "name": "4WD mode"
     }
-  ]}
+  ]
+}
 
   ]}
 
