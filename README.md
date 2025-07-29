@@ -38,3 +38,36 @@ If you encounter any issues or would like to discuss improvements, please feel f
 **WIP:**
 - 4WD Status
 - More in-depth gear selection
+
+**Planned:**
+- Various parameters from the following subsystems: 
+    - ABS/VSC/TRAC
+    - Air Conditioner
+    - Brakes
+    - Combination Meter (Cluster)
+    - Engine and Electronic Controlled Transmission
+    - Four Wheel Drive
+    - Navigation System
+    - Pre-Collision 2
+    - Progressive Power Steering
+    - Radar Cruise 1
+    - Radar Cruise 2
+    - SRS Airbag
+    - Starting Back Door Power Window
+    - Central Gateway
+    - Driver Power Window
+    - Driver Seat
+    - Driver Seat Switches
+    - Front Recognition Camera
+    - Intuitive P/A
+    - Kinetic Dynamic Suspension System (I'll need testers for this)
+    - Lane Keeping Assist / Lane Departure Alert
+    - Main Body
+    - Master Switch
+    - Passenger Power Window
+    - Power Source Control
+    - RL-Door Motor
+    - RR-Door Motor
+    - Sliding Roof
+    - Smart Key
+    - Telematics
