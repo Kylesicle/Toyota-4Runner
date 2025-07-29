@@ -81,6 +81,63 @@
   "signals": [
     {"id": "4RUNNER_GEAR",       "path": "Transmission", "fmt": {          "len": 8, "max": 20, "unit": "scalar" }, "name": "Gear"},
     {"id": "4RUNNER_TQC_LOCKUP", "path": "Transmission", "fmt": {"bix": 8, "len": 1, "max": 1,  "unit": "offon"  }, "name": "Torque converter lock-up", "description": "Engages a clutch inside the torque converter to create a direct connection between the engine and transmission, reducing slippage and improving efficiency."}
-  ]}
+  ]},
+  {
+      "hdr": "7E0",
+      "rax": "7E8",
+      "cmd": {"21": "25"},
+      "freq": 1,
+      "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
+      "signals": [
+        {
+          "id": "4RUNNER_TRANSFER_CASE",
+          "path": "Transmission",
+          "fmt": {
+            "bix": 16,
+            "len": 16,
+            "map": {
+              "4": { "description": "Two-wheel drive mode", "value": "2WD" },
+              "248": { "description": "Four-wheel drive mode", "value": "4WD" },
+              "208": { "description": "Four-wheel drive mode in Drive", "value": "4WD" },
+              "2C8": { "description": "Four-wheel drive low mode", "value": "4Lo" },
+              "288": { "description": "Four-wheel drive low mode in Drive", "value": "4Lo" }
+            }
+          },
+          "name": "Transfer case mode",
+          "description": "Indicates the current mode of the transfer case (2WD, 4WD, or 4Lo)."
+        },
+        {
+          "id": "4RUNNER_GEAR_STATE",
+          "path": "Transmission",
+          "fmt": {
+            "bix": 56,
+            "len": 8,
+            "map": {
+              "80": { "description": "Vehicle in Park", "value": "Park" },
+              "20": { "description": "Vehicle in Neutral", "value": "Neutral" },
+              "10": { "description": "Vehicle in Drive or Manual Drive", "value": "Drive" }
+            }
+          },
+          "name": "Gear state",
+          "description": "Indicates the current gear state (Park, Neutral, Drive, or Manual Drive)."
+        },
+        {
+          "id": "4RUNNER_MANUAL_DRIVE",
+          "path": "Transmission",
+          "fmt": {
+            "bix": 8,
+            "len": 1,
+            "map": {
+              "0": { "description": "Manual Drive mode off", "value": "Off" },
+              "1": { "description": "Manual Drive mode on", "value": "On" }
+            }
+          },
+          "name": "Manual drive mode",
+          "description": "Indicates whether Manual Drive mode is engaged."
+        }
+      ]
+    }
+
+
   ]}
 
