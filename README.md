@@ -30,7 +30,7 @@ Contributions are welcome! If you would like to add support for additional model
 
 If you encounter any issues or would like to discuss improvements, please feel free to open an issue. We encourage collaboration and appreciate feedback to make the repository as accurate and useful as possible.
 
-## REMOVE WHEN MERGED WITH OBDB
+## REMOVE WHEN MERGED WITH OBDB:
 **Current issues:**
 - Cruise control parameter is questionable
 - Missing cases for parking brake parameter
