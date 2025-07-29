@@ -81,33 +81,6 @@
   "signals": [
     {"id": "4RUNNER_GEAR",       "path": "Transmission", "fmt": {          "len": 8, "max": 20, "unit": "scalar" }, "name": "Gear"},
     {"id": "4RUNNER_TQC_LOCKUP", "path": "Transmission", "fmt": {"bix": 8, "len": 1, "max": 1,  "unit": "offon"  }, "name": "Torque converter lock-up", "description": "Engages a clutch inside the torque converter to create a direct connection between the engine and transmission, reducing slippage and improving efficiency."}
-  ]},
-{
-  "hdr": "7E0",
-  "rax": "7E8",
-  "cmd": { "21": "25" },
-  "freq": 0.5,
-  "signals": [
-    {
-      "id": "4RUNNER_GEAR_POSITION",
-      "name": "Gear position",
-      "path": "Transmission",
-      "fmt": { "bix": 40, "len": 8, "map": { "128": "Park", "32": "Neutral", "16": "Drive" } }
-    },
-    {
-      "id": "4RUNNER_MANUAL_FLAG",
-      "name": "Manual flag",
-      "path": "Transmission",
-      "fmt": { "bix": 48, "len": 8, "map": { "0": "Auto", "128": "Sequential mode" } }
-    },
-    {
-      "id": "4RUNNER_4WD_MODE",
-      "name": "4WD mode",
-      "path": "Transmission",
-      "fmt": { "bix": 56, "len": 8, "map": { "0": "2WD", "2": "4WD", "10": "4Lo" } }
-    }
-  ]
-}
-
+  ]}
   ]}
 
