@@ -87,7 +87,6 @@
   "rax": "7E8",
   "cmd": { "21": "25" },
   "freq": 0.5,
-  "dbgfilter": { "to": 2023 },
   "signals": [
     {
       "id": "4RUNNER_GEAR_POSITION",
