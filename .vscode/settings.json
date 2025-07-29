@@ -7,6 +7,5 @@
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
-    "files.trimTrailingWhitespace": true,
-    "git.enableCommitSigning": true
+    "files.trimTrailingWhitespace": true
 }
