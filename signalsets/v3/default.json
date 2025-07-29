@@ -84,27 +84,30 @@
   ]},
 {
   "hdr": "7E0",
-  "rax": "7E8",
   "cmd": {"21": "25"},
   "freq": 1,
   "signals": [
     {
       "id": "4RUNNER_GEAR_POSITION",
       "fmt": { "bix": 40, "len": 8, "map": { "128": "Park", "32": "Neutral", "16": "Drive" } },
-      "name": "Gear positions?"
+      "name": "Gear position",
+      "description": "Maps 8-bit values to gear positions (Park, Neutral, Drive)"
     },
     {
       "id": "4RUNNER_MANUAL_FLAG",
       "fmt": { "bix": 48, "len": 8, "map": { "0": "Auto", "128": "Manual" } },
-      "name": "Manual mode?"
+      "name": "Manual mode",
+      "description": "Indicates whether manual drive mode is active (0 = Auto, 128 = Manual)"
     },
     {
       "id": "4RUNNER_4WD_MODE",
       "fmt": { "bix": 56, "len": 8, "map": { "0": "2WD", "2": "4WD", "10": "4Lo" } },
-      "name": "4WD mode"
+      "name": "4WD mode",
+      "description": "Maps 8-bit decimal values to transfer case modes (2WD, 4WD, 4Lo)"
     }
   ]
 }
+
 
   ]}
 
