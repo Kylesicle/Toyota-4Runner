@@ -7,7 +7,7 @@
     {"id": "4RUNNER_TT_RR",    "path": "Tires", "fmt": {"bix": 24, "len": 8, "max": 150, "min": -20, "add": -40, "unit": "celsius" }, "name": "Rear right tire temperature"},
     {"id": "4RUNNER_TT_SPARE", "path": "Tires", "fmt": {"bix": 32, "len": 8, "max": 150, "min": -20, "add": -40, "unit": "celsius" }, "name": "Spare tire temperature"}
   ]},
-{ "hdr": "750", "eax": "2A", "tst": "2A", "fcm1": true, "cmd": {"21": "30"}, "freq": 2.5, "dbgfilter": { "to": 2019, "years": [2021, 2022], "from": 2024 },
+{ "hdr": "750", "eax": "2A", "tst": "2A", "fcm1": true, "cmd": {"21": "30"}, "freq": 0.001, "dbgfilter": { "to": 2019, "years": [2021, 2022], "from": 2024 },
   "signals": [
     {"id": "4RUNNER_TP_FL",    "path": "Tires", "fmt": {           "len": 8, "max": 3.88, "div": 58, "add": -0.5, "unit": "bars" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
     {"id": "4RUNNER_TP_FR",    "path": "Tires", "fmt": {"bix": 8,  "len": 8, "max": 3.88, "div": 58, "add": -0.5, "unit": "bars" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
@@ -22,18 +22,18 @@
     {"id": "4RUNNER_TIRE_RR_SPD", "path": "Movement", "fmt": {"bix": 16, "len": 8, "max": 326.4, "mul": 256, "div": 200, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"},
     {"id": "4RUNNER_TIRE_RL_SPD", "path": "Movement", "fmt": {"bix": 24, "len": 8, "max": 326.4, "mul": 256, "div": 200, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
   ]},
-{ "hdr": "7B0", "rax": "7B8", "cmd": {"21": "21"}, "freq": 0.2, "dbgfilter": { "to": 2004, "years": [2006, 2007, 2008, 2009, 2010, 2012, 2013, 2018, 2019, 2022], "from": 2024 },
+{ "hdr": "7B0", "rax": "7B8", "cmd": {"21": "21"}, "freq": 0.001, "dbgfilter": { "to": 2004, "years": [2006, 2007, 2008, 2009, 2010, 2012, 2013, 2018, 2019, 2022], "from": 2024 },
   "signals": [
     {"id": "4RUNNER_VSS", "path": "Movement", "fmt": { "bix": 0, "len": 8, "max": 323.85, "mul": 1.35, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed", "description": "Current vehicle speed."}
   ]},
-{ "hdr": "7B0", "rax": "7B8", "cmd": {"21": "47"}, "freq": 0.25, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
+{ "hdr": "7B0", "rax": "7B8", "cmd": {"21": "47"}, "freq": 0.001, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
   "signals": [
     {"id": "4RUNNER_LAT_G",        "path": "Orientation", "fmt": {           "len": 8,  "max": 2.5,   "min": -2.5,   "div": 50, "sign": true,   "unit": "gravity" },  "name": "Lateral g-force",             "description": "Lateral acceleration (side-to-side) measured in g-forces."},
     {"id": "4RUNNER_LNG_G",        "path": "Orientation", "fmt": {"bix": 8,  "len": 8,  "max": 2.5,   "min": -2.5,   "div": 50, "sign": true,   "unit": "gravity" },  "name": "Longitudinal g-force",        "description": "Longitudinal acceleration (forward and backward) measured in g-forces."},
     {"id": "4RUNNER_YAW_RATE",     "path": "Orientation", "fmt": {"bix": 16, "len": 8,  "max": 127,   "min": -128,   "add": -128,               "unit": "degrees" }, "name": "Yaw rate value (degrees/sec)", "description": "Rate of rotation around the vehicle's vertical axis, in degrees per second."},
     {"id": "4RUNNER_STEER_ANGLE",  "path": "Control",     "fmt": {"bix": 24, "len": 16, "max": 3276,  "min": -3276,  "div": 10, "add": -3276.8, "unit": "degrees" },"name": "Steering wheel angle",          "description": "Steering wheel angle in degrees. Positive = counter-clockwise, negative = clockwise."}
   ]},
-{ "hdr": "7C0", "rax": "7C8", "cmd": {"21": "29"}, "freq": 5, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2014, 2018, 2019, 2022], "from": 2024 },
+{ "hdr": "7C0", "rax": "7C8", "cmd": {"21": "29"}, "freq": 10, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2014, 2018, 2019, 2022], "from": 2024 },
   "signals": [
     {"id": "4RUNNER_FLI_VOL", "path": "Fuel", "fmt": { "len": 8, "max": 21, "mul": 500, "div": 3785, "unit": "gallons" }, "name": "Fuel level (volume)", "suggestedMetric": "fuelTankLevel", "description": "Indicates the estimated fuel volume in the tank, in gallons. Note: The 4Runner has a 2 gallon reserve that is not included in this value."}
   ]},
@@ -41,19 +41,7 @@
   "signals": [
     {"id": "4RUNNER_PARKING_BRAKE", "path": "Control", "name": "Parking brake", "description": "Indicates whether the parking brake is engaged or released.", "fmt": {"len": 8, "map": {
         "1":   { "description": "", "value": "Off" },
-        "3":   { "description": "", "value": "On" },
-        "5":   { "description": "", "value": "Off" },
-        "7":   { "description": "", "value": "On" },
-        "9":   { "description": "", "value": "Off" },
-        "11":  { "description": "", "value": "On" },
-        "16":  { "description": "", "value": "Off" },
-        "48":  { "description": "", "value": "On" },
-        "144": { "description": "", "value": "Off" },
-        "176": { "description": "", "value": "On" },
-        "208": { "description": "", "value": "Off" },
-        "240": { "description": "", "value": "On" },
-        "537": { "description": "it's either this or 219", "value": "Off" },
-        "539": { "description": "it's either this or 21B", "value": "On" }
+        "3":   { "description": "", "value": "On" }
       }}
     }
   ]},
@@ -65,48 +53,21 @@
   "signals": [
     {"id": "4RUNNER_ODO", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "51"}, "freq": 1, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "51"}, "freq": 0.001, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
   "signals": [
     {"id": "4RUNNER_PREV_TRIP_DST", "path": "Trips",  "fmt": {"bix": 40, "len": 16, "max": 655.35,             "div": 100,             "unit": "kilometers" }, "name": "Previous trip distance"},
     {"id": "4RUNNER_VVTOT",         "path": "Engine", "fmt": {"bix": 56, "len": 8,  "max": 215,    "min": -40,             "add": -40, "unit": "celsius"    }, "name": "Variable valve timing oil temperature"},
     {"id": "4RUNNER_EOT",           "path": "Engine", "fmt": {"bix": 72, "len": 8,  "max": 215,    "min": -40,             "add": -40, "unit": "celsius"    }, "name": "Engine oil temperature"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "82"}, "freq": 1, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2021, 2022], "from": 2024 },
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "82"}, "freq": 0.001, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2021, 2022], "from": 2024 },
   "signals": [
     {"id": "4RUNNER_ATF_PAN_T", "path": "Transmission", "fmt": {           "len": 16, "max": 215, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Transmission temperature (pan)"},
     {"id": "4RUNNER_ATF_TQC_T", "path": "Transmission", "fmt": {"bix": 16, "len": 16, "max": 215, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Transmission temperature (torque converter)"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "85"}, "freq": 0.4, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "85"}, "freq": 0.001, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
   "signals": [
     {"id": "4RUNNER_GEAR",       "path": "Transmission", "fmt": {          "len": 8, "max": 20, "unit": "scalar" }, "name": "Gear"},
     {"id": "4RUNNER_TQC_LOCKUP", "path": "Transmission", "fmt": {"bix": 8, "len": 1, "max": 1,  "unit": "offon"  }, "name": "Torque converter lock-up", "description": "Engages a clutch inside the torque converter to create a direct connection between the engine and transmission, reducing slippage and improving efficiency."}
-  ]},
-  {
-      "hdr": "7E0",
-      "rax": "7E8",
-      "cmd": {"21": "25"},
-      "freq": 1,
-      "dbgfilter": { "years": [2018, 2019, 2020, 2022, 2023, 2024, 2025], "from": 2026 },
-      "signals": [
-        {
-          "id": "4RUNNER_GEAR_POSITION",
-          "path": "Drivetrain",
-          "fmt": { "bix": 0, "len": 8, "map": { "10": "Park", "20": "Neutral", "16": "Drive" } },
-          "name": "Gear position"
-        },
-        {
-          "id": "4RUNNER_MANUAL_FLAG",
-          "path": "Drivetrain",
-          "fmt": { "bix": 8, "len": 8, "map": { "2": "Auto", "18": "Manual" } },
-          "name": "Manual mode"
-        },
-        {
-          "id": "4RUNNER_4WD_MODE",
-          "path": "Drivetrain",
-          "fmt": { "bix": 16, "len": 8, "map": { "0": "2WD", "2": "4WD", "200": "4Lo" } },
-          "name": "4WD mode"
-        }
-      ]
-    }
+  ]}
   ]}
 
