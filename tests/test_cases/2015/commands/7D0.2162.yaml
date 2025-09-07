@@ -1,11 +1,11 @@
 command_id: 7D0.2162
 test_cases:
 - expected_values:
-    4RUNNER_PARKING_BRAKE: 'Off'
+    4RUNNER_CABIN_DIMMER_MODE: null
   response: 7D80461620100
 - expected_values:
-    4RUNNER_PARKING_BRAKE: 'Off'
+    4RUNNER_CABIN_DIMMER_MODE: null
   response: 7D80461620181
 - expected_values:
-    4RUNNER_PARKING_BRAKE: null
+    4RUNNER_CABIN_DIMMER_MODE: null
   response: 7D80461620900
