@@ -71,22 +71,44 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"21": "25"}, "freq": 5,
   "signals": [
-    {"id": "4RUNNER_GEAR_POSITION","path": "Transmission", "name": "Shifter position", "fmt": {"bix": 40, "len": 8, "map": {
+    {
+      "id": "4RUNNER_GEAR_POSITION",
+      "path": "Transmission",
+      "name": "Shifter position",
+      "fmt": {
+        "bix": 40,
+        "len": 8,
+        "map": {
           "16":  { "description": "Drive",   "value": "D" },
           "32":  { "description": "Neutral", "value": "N" },
           "64":  { "description": "Reverse", "value": "R" },
           "128": { "description": "Park",    "value": "P" }
-        }}
+        }
+      }
     },
-    {"id": "4RUNNER_MANUAL_MODE",  "path": "Transmission", "name": "Manual mode", "fmt": { "bix": 51, "len": 1, "max": 1, "unit": "offon" }},
-    {"id": "4RUNNER_4WD_MODE",     "path": "Drivetrain",   "name": "Transfer case mode", "fmt": {"bix": 56, "len": 8, "map": {
+    {
+      "id": "4RUNNER_MANUAL_MODE",
+      "path": "Transmission",
+      "name": "Manual mode",
+      "fmt": { "bix": 51, "len": 1, "max": 1, "unit": "offon" }
+    },
+    {
+      "id": "4RUNNER_4WD_MODE",
+      "path": "Drivetrain",
+      "name": "Transfer case mode",
+      "fmt": {
+        "bix": 56,
+        "len": 8,
+        "map": {
           "0":  { "description": "2H (D/R)", "value": "2H" },
           "4":  { "description": "2H (P/N)", "value": "2H" },
           "32": { "description": "4H (D/R)", "value": "4H" },
           "36": { "description": "4H (P/N)", "value": "4H" },
           "40": { "description": "4L (D/R)", "value": "4L" },
           "44": { "description": "4L (P/N)", "value": "4L" }
-        }}
+        }
+      }
     }
-]}
+  ]
+}
 ]}
