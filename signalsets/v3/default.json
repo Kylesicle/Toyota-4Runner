@@ -1,4 +1,4 @@
-  { "commands": [
+{ "commands": [
 { "hdr": "750", "eax": "2A", "fcm1": true, "cmd": {"21": "16"}, "freq": 1, "dbgfilter": { "to": 2019, "years": [2022], "from": 2024 },
   "signals": [
     {"id": "4RUNNER_TT_FL",    "path": "Tires", "fmt": {           "len": 8, "max": 150, "min": -20, "add": -40, "unit": "celsius" }, "name": "Front left tire temperature"},
@@ -53,21 +53,65 @@
   "signals": [
     {"id": "4RUNNER_ODO", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "51"}, "freq": 0.001, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "51"}, "freq": 1, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
   "signals": [
     {"id": "4RUNNER_PREV_TRIP_DST", "path": "Trips",  "fmt": {"bix": 40, "len": 16, "max": 655.35,             "div": 100,             "unit": "kilometers" }, "name": "Previous trip distance"},
     {"id": "4RUNNER_VVTOT",         "path": "Engine", "fmt": {"bix": 56, "len": 8,  "max": 215,    "min": -40,             "add": -40, "unit": "celsius"    }, "name": "Variable valve timing oil temperature"},
     {"id": "4RUNNER_EOT",           "path": "Engine", "fmt": {"bix": 72, "len": 8,  "max": 215,    "min": -40,             "add": -40, "unit": "celsius"    }, "name": "Engine oil temperature"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "82"}, "freq": 0.001, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2021, 2022], "from": 2024 },
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "82"}, "freq": 1, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2021, 2022], "from": 2024 },
   "signals": [
     {"id": "4RUNNER_ATF_PAN_T", "path": "Transmission", "fmt": {           "len": 16, "max": 215, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Transmission temperature (pan)"},
     {"id": "4RUNNER_ATF_TQC_T", "path": "Transmission", "fmt": {"bix": 16, "len": 16, "max": 215, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Transmission temperature (torque converter)"}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "85"}, "freq": 0.001, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "85"}, "freq": 0.4, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
   "signals": [
     {"id": "4RUNNER_GEAR",       "path": "Transmission", "fmt": {          "len": 8, "max": 20, "unit": "scalar" }, "name": "Gear"},
     {"id": "4RUNNER_TQC_LOCKUP", "path": "Transmission", "fmt": {"bix": 8, "len": 1, "max": 1,  "unit": "offon"  }, "name": "Torque converter lock-up", "description": "Engages a clutch inside the torque converter to create a direct connection between the engine and transmission, reducing slippage and improving efficiency."}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "25"}, "freq": 5, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
+  "signals": [
+    {
+      "id": "4RUNNER_GEAR_POSITION",
+      "path": "Transmission",
+      "name": "Shifter position",
+      "fmt": {
+        "bix": 48,
+        "len": 8,
+        "map": {
+          "128": { "description": "Park",    "value": "P" },
+          "32":  { "description": "Neutral", "value": "N" },
+          "16":  { "description": "Drive",   "value": "D" }
+        }
+      }
+    },
+    {
+      "id": "4RUNNER_MANUAL_MODE",
+      "path": "Transmission",
+      "name": "Manual mode",
+      "fmt": {
+        "bix": 59,
+        "len": 1,
+        "max": 1,
+        "unit": "offon"
+      }
+    },
+    {
+      "id": "4RUNNER_4WD_MODE",
+      "path": "Drivetrain",
+      "name": "Transfer case mode",
+      "fmt": {
+        "bix": 64,
+        "len": 8,
+        "map": {
+          "0":  { "description": "2WD (D)",   "value": "2WD" },
+          "4":  { "description": "2WD (P/N)", "value": "2WD" },
+          "32": { "description": "4WD High (D/MD)", "value": "4WD High" },
+          "36": { "description": "4WD High (P/N)",  "value": "4WD High" },
+          "40": { "description": "4WD Low (D/MD)",  "value": "4WD Low" },
+          "44": { "description": "4WD Low (P/N)",   "value": "4WD Low" }
+        }
+      }
+    }
   ]}
-  ]}
-
+]}

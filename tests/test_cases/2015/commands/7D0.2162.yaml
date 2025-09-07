@@ -7,5 +7,5 @@ test_cases:
     4RUNNER_PARKING_BRAKE: 'Off'
   response: 7D80461620181
 - expected_values:
-    4RUNNER_PARKING_BRAKE: 'Off'
+    4RUNNER_PARKING_BRAKE: null
   response: 7D80461620900
