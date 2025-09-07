@@ -37,36 +37,14 @@
   "signals": [
     {"id": "4RUNNER_FLI_VOL", "path": "Fuel", "fmt": { "len": 8, "max": 21, "mul": 500, "div": 3785, "unit": "gallons" }, "name": "Fuel level (volume)", "suggestedMetric": "fuelTankLevel", "description": "Indicates the estimated fuel volume in the tank, in gallons. Note: The 4Runner has a 2 gallon reserve that is not included in this value."}
   ]},
-{ "hdr": "7D0", "rax": "7D8", "cmd": {"21": "62"}, "freq": 1, "dbgfilter": {"years": [2023]},
+{ "hdr": "7D0", "cmd": {"21": "62"}, "freq": 1, "dbgfilter": { "to": 2014, "years": [2016, 2017, 2018, 2019, 2022], "from": 2024 },
   "signals": [
-    {
-      "id": "4RUNNER_PARKING_BRAKE",
-      "path": "Control",
-      "name": "Parking brake",
-      "fmt": { "bix": 37, "len": 1, "max": 1, "unit": "offon" }
-    },
-    {
-      "id": "4RUNNER_BACKLIGHT_ACTIVE",
-      "path": "Lights",
-      "name": "Exterior lights/backlight active",
-      "fmt": { "bix": 39, "len": 1, "max": 1, "unit": "offon" }
-    },
-    {
-      "id": "4RUNNER_CABIN_DIMMER_MODE",
-      "path": "Lights",
-      "name": "Cabin dimmer mode",
-      "fmt": {
-        "bix": 24,
-        "len": 8,
-        "map": {
-          "32": { "description": "Max brightness / no dimming", "value": "Max" }, 
-          "33": { "description": "Partial dim when exterior lights are on", "value": "Partial" }
-        }
-      }
+    {"id": "4RUNNER_PARKING_BRAKE", "path": "Control", "name": "Parking brake", "fmt": {"len": 8, "map": {
+          "1":   { "description": "", "value": "Off" },
+          "3":   { "description": "", "value": "On" }
+        }}
     }
-  ]
-},
-
+  ]},
 { "hdr": "7E0", "rax": "7E8", "cmd": {"21": "21"}, "freq": 1, "dbgfilter": { "to": 2004, "years": [2006, 2007, 2008, 2009, 2010, 2012, 2013, 2018, 2019, 2022], "from": 2024 },
   "signals": [
     {"id": "4RUNNER_CC_S", "path": "Cruise control", "fmt": {"bix": 8, "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Cruise control speed"}
@@ -91,49 +69,24 @@
     {"id": "4RUNNER_GEAR",       "path": "Transmission", "fmt": {          "len": 8, "max": 20, "unit": "scalar" }, "name": "Gear"},
     {"id": "4RUNNER_TQC_LOCKUP", "path": "Transmission", "fmt": {"bix": 8, "len": 1, "max": 1,  "unit": "offon"  }, "name": "Torque converter lock-up", "description": "Engages a clutch inside the torque converter to create a direct connection between the engine and transmission, reducing slippage and improving efficiency."}
   ]},
-{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "25"}, "freq": 5, "dbgfilter": { "to": 2010, "years": [2012, 2013, 2018, 2019, 2022], "from": 2024 },
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"21": "25"}, "freq": 5,
   "signals": [
-    {
-      "id": "4RUNNER_GEAR_POSITION",
-      "path": "Transmission",
-      "name": "Shifter position",
-      "fmt": {
-        "bix": 48,
-        "len": 8,
-        "map": {
-          "128": { "description": "Park",    "value": "P" },
+    {"id": "4RUNNER_GEAR_POSITION","path": "Transmission", "name": "Shifter position", "fmt": {"bix": 40, "len": 8, "map": {
+          "16":  { "description": "Drive",   "value": "D" },
           "32":  { "description": "Neutral", "value": "N" },
-          "16":  { "description": "Drive",   "value": "D" }
-        }
-      }
+          "64":  { "description": "Reverse", "value": "R" },
+          "128": { "description": "Park",    "value": "P" }
+        }}
     },
-    {
-      "id": "4RUNNER_MANUAL_MODE",
-      "path": "Transmission",
-      "name": "Manual mode",
-      "fmt": {
-        "bix": 59,
-        "len": 1,
-        "max": 1,
-        "unit": "offon"
-      }
-    },
-    {
-      "id": "4RUNNER_4WD_MODE",
-      "path": "Drivetrain",
-      "name": "Transfer case mode",
-      "fmt": {
-        "bix": 64,
-        "len": 8,
-        "map": {
-          "0":  { "description": "2WD (D)",   "value": "2WD" },
-          "4":  { "description": "2WD (P/N)", "value": "2WD" },
-          "32": { "description": "4WD High (D/MD)", "value": "4WD High" },
-          "36": { "description": "4WD High (P/N)",  "value": "4WD High" },
-          "40": { "description": "4WD Low (D/MD)",  "value": "4WD Low" },
-          "44": { "description": "4WD Low (P/N)",   "value": "4WD Low" }
-        }
-      }
+    {"id": "4RUNNER_MANUAL_MODE",  "path": "Transmission", "name": "Manual mode", "fmt": { "bix": 51, "len": 1, "max": 1, "unit": "offon" }},
+    {"id": "4RUNNER_4WD_MODE",     "path": "Drivetrain",   "name": "Transfer case mode", "fmt": {"bix": 56, "len": 8, "map": {
+          "0":  { "description": "2H (D/R)", "value": "2H" },
+          "4":  { "description": "2H (P/N)", "value": "2H" },
+          "32": { "description": "4H (D/R)", "value": "4H" },
+          "36": { "description": "4H (P/N)", "value": "4H" },
+          "40": { "description": "4L (D/R)", "value": "4L" },
+          "44": { "description": "4L (P/N)", "value": "4L" }
+        }}
     }
-  ]}
+]}
 ]}
