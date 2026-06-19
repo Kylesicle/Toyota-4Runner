@@ -127,6 +127,14 @@
           "27": { "description": "High",   "value": "HIGH" }
         }}, "name": "Blower speed", "description": "Observed on 2023 4Runner: 00, 01, 04, 08, 0C, 11, 17, 1B from fan off to high."}
   ]},
+  { "hdr": "7C4", "cmd": {"21": "98"}, "freq": 10, "dbgfilter": { "from": 2025 },
+  "signals": [
+    {"id": "4RUNNER_AC_BUTTON_EVENT", "path": "Climate", "fmt": {"len": 8, "map": {
+          "0":  { "description": "No A/C button event",  "value": "IDLE" },
+          "43": { "description": "A/C on button event",  "value": "ON_EVENT" },
+          "44": { "description": "A/C off button event", "value": "OFF_EVENT" }
+        }}, "name": "A/C button event"}
+  ]},
 { "hdr": "7C4", "cmd": {"21": "43"}, "freq": 1, "dbgfilter": { "to": 2010, "years": [2014], "from": 2025 },
   "signals": [
     {"id": "4RUNNER_AIR_OUTLET_SERVO_PULSE_D",      "path": "Climate", "fmt": {          "len": 8, "max": 255, "unit": "scalar" }, "name": "Air outlet servo pulse, driver"},
