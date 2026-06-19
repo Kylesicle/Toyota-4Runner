@@ -114,25 +114,18 @@
   "signals": [
     {"id": "4RUNNER_FLI_VOL", "path": "Fuel", "fmt": { "len": 8, "max": 21, "mul": 500, "div": 3785, "unit": "gallons" }, "name": "Fuel level (volume)", "suggestedMetric": "fuelTankLevel"}
   ]},
-{ "hdr": "7C4", "cmd": {"21": "22"}, "freq": 1, "filter": { "from": 2023 }, "dbgfilter": { "from": 2025 },
-  "signals": [
-    {"id": "4RUNNER_HVAC_STATE_REQ_RAW", "path": "Climate", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "HVAC state/request byte, raw", "description": "Observed during 2023 blower sweep; changed occasionally, not a direct fan-step value."}
-  ]},
-{ "hdr": "7C4", "cmd": {"21": "26"}, "freq": 1, "filter": { "from": 2023 }, "dbgfilter": { "from": 2025 },
-  "signals": [
-    {"id": "4RUNNER_HVAC_STATUS_26_RAW", "path": "Climate", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "HVAC status byte 26, raw"}
-  ]},
 { "hdr": "7C4", "cmd": {"21": "3C"}, "freq": 1, "filter": { "from": 2023 }, "dbgfilter": { "from": 2025 },
   "signals": [
-    {"id": "4RUNNER_BLOWER_FAN_TARGET_RAW", "path": "Climate", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Blower fan target, raw", "description": "Observed 2023 fan sweep off to high: 00, 01, 04, 08, 0C, 11, 17, 1B. High confidence blower/fan command or target raw."}
-  ]},
-{ "hdr": "7C4", "cmd": {"21": "3D"}, "freq": 1, "filter": { "from": 2023 }, "dbgfilter": { "from": 2025 },
-  "signals": [
-    {"id": "4RUNNER_HVAC_STATUS_3D_RAW", "path": "Climate", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "HVAC status byte 3D, raw"}
-  ]},
-{ "hdr": "7C4", "cmd": {"21": "4B"}, "freq": 1, "filter": { "from": 2023 }, "dbgfilter": { "from": 2025 },
-  "signals": [
-    {"id": "4RUNNER_HVAC_LIVE_FEEDBACK_RAW", "path": "Climate", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "HVAC live feedback, raw", "description": "Observed during 2023 blower sweep; changes but is not direct fan speed."}
+    {"id": "4RUNNER_BLOWER_SPEED", "path": "Climate", "fmt": {"len": 8, "map": {
+          "0":  { "description": "Off",    "value": "OFF" },
+          "1":  { "description": "Fan 1",  "value": "1" },
+          "4":  { "description": "Fan 2",  "value": "2" },
+          "8":  { "description": "Fan 3",  "value": "3" },
+          "12": { "description": "Fan 4",  "value": "4" },
+          "17": { "description": "Fan 5",  "value": "5" },
+          "23": { "description": "Fan 6",  "value": "6" },
+          "27": { "description": "High",   "value": "HIGH" }
+        }}, "name": "Blower speed", "description": "Observed on 2023 4Runner: 00, 01, 04, 08, 0C, 11, 17, 1B from fan off to high."}
   ]},
 { "hdr": "7C4", "cmd": {"21": "43"}, "freq": 1, "dbgfilter": { "to": 2010, "years": [2014], "from": 2025 },
   "signals": [
