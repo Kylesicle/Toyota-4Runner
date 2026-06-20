@@ -274,6 +274,57 @@
       "description": "7E0 212B bytes 4-5. Observed about 45.7-74.2% on 2023 4Runner; behaves like fuel pump or fuel pressure control duty."
     }
   ]
+},
+{
+  "hdr": "7E0",
+  "rax": "7E8",
+  "cmd": { "21": "08" },
+  "freq": 5,
+  "dbgfilter": { "from": 2025 },
+  "signals": [
+    {
+      "id": "4RUNNER_FUEL_DEMAND_1",
+      "path": "Engine/Fuel",
+      "fmt": {
+        "bix": 32,
+        "len": 16,
+        "max": 6553.5,
+        "min": 0,
+        "div": 10,
+        "unit": "scalar"
+      },
+      "name": "Fuel demand 1",
+      "description": "7E0 2108 bytes 4-5. Drops to 0 during decel fuel cut and rises rapidly with MAF/throttle."
+    },
+    {
+      "id": "4RUNNER_FUEL_DEMAND_2",
+      "path": "Engine/Fuel",
+      "fmt": {
+        "bix": 48,
+        "len": 16,
+        "max": 6553.5,
+        "min": 0,
+        "div": 10,
+        "unit": "scalar"
+      },
+      "name": "Fuel demand 2",
+      "description": "7E0 2108 bytes 6-7. Matched fuel demand 1 throughout repeated tests."
+    },
+    {
+      "id": "4RUNNER_FUEL_QUANTITY",
+      "path": "Engine/Fuel",
+      "fmt": {
+        "bix": 64,
+        "len": 16,
+        "max": 655.35,
+        "min": 0,
+        "div": 100,
+        "unit": "scalar"
+      },
+      "name": "Fuel quantity",
+      "description": "7E0 2108 bytes 8-9. Strong fuel quantity / injection demand candidate; tracks MAF and throttle."
+    }
+  ]
 }
 ]
 }
