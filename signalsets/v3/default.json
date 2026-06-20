@@ -251,6 +251,29 @@
       "description": "Candidate from 7E0 2104 bytes 16-17. Observed reactive range about -3.2 to +4.7 degrees on 2023 4Runner."
     }
   ]
+},
+{
+  "hdr": "7E0",
+  "rax": "7E8",
+  "cmd": { "21": "2B" },
+  "freq": 5,
+  "dbgfilter": { "from": 2025 },
+  "signals": [
+    {
+      "id": "4RUNNER_FUEL_PUMP_DUTY",
+      "path": "Engine/Fuel",
+      "fmt": {
+        "bix": 32,
+        "len": 16,
+        "max": 100,
+        "min": 0,
+        "div": 655.35,
+        "unit": "percent"
+      },
+      "name": "Fuel pump duty",
+      "description": "7E0 212B bytes 4-5. Observed about 45.7-74.2% on 2023 4Runner; behaves like fuel pump or fuel pressure control duty."
+    }
+  ]
 }
 ]
 }
