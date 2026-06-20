@@ -212,6 +212,45 @@
       "name": "4WD transfer mode"
     }
   ]
+},
+{
+  "hdr": "7E0",
+  "rax": "7E8",
+  "cmd": { "21": "04" },
+  "freq": 5,
+  "dbgfilter": { "from": 2025 },
+  "signals": [
+    {
+      "id": "4RUNNER_KNOCK_SPARK_CORRECTION_1",
+      "path": "Engine",
+      "fmt": {
+        "bix": 96,
+        "len": 16,
+        "max": 327.67,
+        "min": -327.68,
+        "div": 100,
+        "add": -327.68,
+        "unit": "degrees"
+      },
+      "name": "Knock / spark correction 1",
+      "description": "Candidate from 7E0 2104 bytes 12-13. Observed reactive range about -3.2 to +4.7 degrees on 2023 4Runner."
+    },
+    {
+      "id": "4RUNNER_KNOCK_SPARK_CORRECTION_2",
+      "path": "Engine",
+      "fmt": {
+        "bix": 128,
+        "len": 16,
+        "max": 327.67,
+        "min": -327.68,
+        "div": 100,
+        "add": -327.68,
+        "unit": "degrees"
+      },
+      "name": "Knock / spark correction 2",
+      "description": "Candidate from 7E0 2104 bytes 16-17. Observed reactive range about -3.2 to +4.7 degrees on 2023 4Runner."
+    }
+  ]
 }
 ]
 }
