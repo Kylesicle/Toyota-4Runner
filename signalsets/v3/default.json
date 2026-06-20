@@ -279,7 +279,7 @@
   "hdr": "7E0",
   "rax": "7E8",
   "cmd": { "21": "08" },
-  "freq": 5,
+  "freq": 0.3,
   "dbgfilter": { "from": 2025 },
   "signals": [
     {
